@@ -2,6 +2,7 @@ fn main() {
     if cfg!(target_os = "windows") {
         println!("cargo:rustc-link-lib=dylib=gdi32");
         println!("cargo:rustc-link-lib=dylib=user32");
+        //Shell32 is necessary for GLFW links
         println!("cargo:rustc-link-lib=dylib=shell32");
     }
     if cfg!(target_os = "linux") {
