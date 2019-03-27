@@ -18,15 +18,15 @@ fn bench_launch() {
     let font = rl.load_font_ex("I-pixel-u.ttf", 80, None);
     let font2 = rl.load_font_ex("ThisSmacky.ttf", 65, None);
 
-    let position = raylib::Vector2 { x: 20.0, y: 70.0 };
-    let position2 = raylib::Vector2 { x: 20.0, y: 50.0 };
+    let position = raylib::Vector2 { x: 20.0, y: 50.0 };
+    let position2 = raylib::Vector2 { x: 20.0, y: 70.0 };
 
     while !rl.window_should_close() {
         rl.begin_drawing();
 
-        rl.clear_background(Color::BLACK);
-        rl.draw_text_ex(&font, &message, position2, 20.0, 0.0, Color::BEIGE);
-        rl.draw_text_ex(&font2, &message2, position, 13.0, 0.0, Color::BROWN);
+        rl.clear_background(Color::BEIGE);
+        rl.draw_text_ex(&font, &message, position, 20.0, 0.0, Color::BROWN);
+        rl.draw_text_ex(&font2, &message2, position2, 13.0, 0.0, Color::BROWN);
 
         rl.draw_fps(500, 0);
         rl.end_drawing();
