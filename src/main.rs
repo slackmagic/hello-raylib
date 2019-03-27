@@ -25,7 +25,7 @@ fn bench_launch() {
         rl.begin_drawing();
 
         rl.clear_background(Color::BEIGE);
-        rl.draw_text_ex(&font, &message, position, 20.0, 0.0, Color::BROWN);
+        rl.draw_text_ex(&font, &message, position, 20.0, 0.0, Color::DARKBROWN);
         rl.draw_text_ex(&font2, &message2, position2, 13.0, 0.0, Color::BROWN);
 
         rl.draw_fps(500, 0);
