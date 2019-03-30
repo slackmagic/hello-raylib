@@ -15,8 +15,10 @@ fn bench_launch() {
 
     let message = "Hello From RUST and Raylib:";
     let message2 = "What an amazing and promising synergy featuring SlackMagiC !";
-    let font = rl.load_font_ex("I-pixel-u.ttf", 80, None);
-    let font2 = rl.load_font_ex("ThisSmacky.ttf", 65, None);
+    let font = rl.load_font_ex("resources/I-pixel-u.ttf", 80, None);
+    let font2 = rl.load_font_ex("resources/ThisSmacky.ttf", 65, None);
+
+    let logo = rl.load_texture("resources/logo.png");
 
     let position = raylib::Vector2 { x: 20.0, y: 50.0 };
     let position2 = raylib::Vector2 { x: 20.0, y: 70.0 };
@@ -27,6 +29,7 @@ fn bench_launch() {
         rl.clear_background(Color::BEIGE);
         rl.draw_text_ex(&font, &message, position, 20.0, 0.0, Color::DARKBROWN);
         rl.draw_text_ex(&font2, &message2, position2, 13.0, 0.0, Color::BROWN);
+        rl.draw_texture(&logo, 20, 90, Color::WHITE);
 
         rl.draw_fps(500, 0);
         rl.end_drawing();
