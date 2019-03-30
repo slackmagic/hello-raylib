@@ -37,7 +37,6 @@ fn bench_launch() {
         rl.draw_texture(&logo, 20, 90, Color::WHITE);
 
         if rl.is_key_pressed(KEY_ENTER as i32) {
-            rl.play_sound(&heartbeat);
             rl.draw_text_ex(&font, &message, position, 20.0, 0.0, Color::LIME);
         }
 
