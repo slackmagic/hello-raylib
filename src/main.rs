@@ -1,3 +1,4 @@
+use raylib::consts::*;
 use raylib::Color;
 
 fn main() {
@@ -19,9 +20,13 @@ fn bench_launch() {
     let font2 = rl.load_font_ex("resources/ThisSmacky.ttf", 65, None);
 
     let logo = rl.load_texture("resources/logo.png");
+    let heartbeat = rl.load_sound("resources/heartbeat.ogg");
 
     let position = raylib::Vector2 { x: 20.0, y: 50.0 };
     let position2 = raylib::Vector2 { x: 20.0, y: 70.0 };
+
+    let position3 = raylib::Vector2 { x: 20.0, y: 300.0 };
+    let position4 = raylib::Vector2 { x: 20.0, y: 320.0 };
 
     while !rl.window_should_close() {
         rl.begin_drawing();
@@ -30,6 +35,20 @@ fn bench_launch() {
         rl.draw_text_ex(&font, &message, position, 20.0, 0.0, Color::DARKBROWN);
         rl.draw_text_ex(&font2, &message2, position2, 13.0, 0.0, Color::BROWN);
         rl.draw_texture(&logo, 20, 90, Color::WHITE);
+
+        if rl.is_key_pressed(KEY_ENTER as i32) {
+            rl.play_sound(&heartbeat);
+            rl.draw_text_ex(&font, &message, position, 20.0, 0.0, Color::LIME);
+        }
+
+        rl.draw_text_ex(
+            &font2,
+            &rl.get_key_pressed().to_string(),
+            position4,
+            13.0,
+            0.0,
+            Color::BLACK,
+        );
 
         rl.draw_fps(500, 0);
         rl.end_drawing();
